@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Flicklist</title>
+    <header>
+        <h1>Welcome to Flicklist!</h1>
+    </header>
+</head>
+    <body>
+        <h2>Add a Movie</h2>
+        <form action="/add" method="post">
+            Enter a movie title: <input type="text" name="newMovie" id= "newMovie"/>
+            <button type="submit">Add Movie</button>
+        </form>
+
+        <h2>Remove a Movie</h2>
+        <form action="/remove" method="post">
+            <ul>
+                {% for movie in movies%}
+                <li><input type="checkbox" name="oldMovies" id="oldMovies" value="{{movie}}"/>{{movie}}</li>
+            </ul>
+                {% endfor %}
+            <button type="submit">Remove Movie</button>
+        </form>
+    </body>
+</html>
